@@ -1,29 +1,25 @@
+# tabela_hash_resultados = {}
 import timeit
-tabela_hash_resultados = {}
 
 
 def calcular_qtd_termos_sequencia_collatz(numero):
-    # consultar antes
-    quantidade_ja_calculada = tabela_hash_resultados.get(numero)
-    if quantidade_ja_calculada:
-        return quantidade_ja_calculada
     qtd_termos = 1
-    numero_inicial = numero
+    # numero_inicial = numero
 
     while numero != 1:
         if numero % 2 == 0:
             numero = numero // 2
         else:
             numero = 3 * numero + 1
-        quantidade_ja_calculada = tabela_hash_resultados.get(numero)
+        # quantidade_ja_calculada = tabela_hash_resultados.get(numero)
 
-        if quantidade_ja_calculada:
-            qtd_termos += quantidade_ja_calculada
-            break
+        # if quantidade_ja_calculada:
+        #     qtd_termos += quantidade_ja_calculada
+        #     break
 
         qtd_termos += 1
 
-    tabela_hash_resultados[numero_inicial] = qtd_termos
+    # tabela_hash_resultados[numero_inicial] = qtd_termos
 
     return qtd_termos
 
